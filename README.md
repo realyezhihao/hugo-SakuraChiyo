@@ -1,7 +1,7 @@
 # Hugo Theme: SakuraChiyo
 [![Minimum Hugo Version](https://img.shields.io/static/v1?label=min-HUGO-version&message=>=v0.143.0&color=blue&logo=hugo)](https://github.com/gohugoio/hugo/releases/tag/v0.143.0)
-![code-size](https://img.shields.io/github/languages/code-size/realyezhihao/SakuraChiyo)
-[![GitHub](https://img.shields.io/github/license/realyezhihao/SakuraChiyo)](https://github.com/realyezhihao/SakuraChiyo/blob/main/LICENSE)
+![code-size](https://img.shields.io/github/languages/code-size/realyezhihao/hugo-SakuraChiyo)
+[![GitHub](https://img.shields.io/github/license/realyezhihao/hugo-SakuraChiyo)](https://github.com/realyezhihao/hugo-SakuraChiyo/blob/main/LICENSE)
 
 SakuraChiyo is the first Hugo theme designed on my own. The name is from a character in an anime *Monthly Girls' Nozaki-kun*.
 
