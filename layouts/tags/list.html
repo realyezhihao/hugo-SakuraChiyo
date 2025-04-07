@@ -1,0 +1,16 @@
+{{ partial "header.html" . }}
+<main id="list">
+  {{ .Content }}
+  {{ range $term := .Site.Taxonomies.tags }}
+    <h2 class="taghead" id="{{ $term.Page.Title }}">{{ $term.Page.Title }}</h2>
+    <ul>
+      {{ range $term.Pages }}
+        <li>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        </li>
+      {{ end }}
+    </ul>
+  {{ end }}
+</main>
+{{ partial "footer.html" . }}

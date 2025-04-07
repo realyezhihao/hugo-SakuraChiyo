@@ -1,0 +1,13 @@
+<footer>
+  <a href="#">{{ T "Back to top" }}</a>
+  <span id="copyright">
+    &copy;
+    {{ .Site.Params.footer.author }}
+    {{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }}
+      {{ .Site.Params.footer.since }} - 
+    {{ end }}
+    {{ now.Format "2006" }}
+  </span> 
+</footer>
+</body>
+</html>

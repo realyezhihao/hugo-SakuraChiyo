@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+  {{ partialCached "maincss.html" . }}
+  {{ partialCached "mainjs.html" . }}
+
+  {{- with resources.Get "image/webicon/apple-touch-icon.png" }}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ .RelPermalink }}">
+  {{- end }}
+  {{- with resources.Get "image/webicon/favicon-32x32.png" }}
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ .RelPermalink }}">
+  {{- end }}
+  {{- with resources.Get "image/webicon/favicon-16x16.png" }}
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ .RelPermalink }}">
+  {{- end }}
+  {{- with resources.Get "image/webicon/site.webmanifest" }}
+    <link rel="manifest" href="{{ .RelPermalink }}">
+  {{- end }}
+
+  {{ if .Param "maths" }}
+    {{ partialCached "maths.html" . }}
+  {{ end }}
+</head>
+<body>
+  <header>
+    {{- with resources.Get "image/avatar.jpg" }}
+      <figure id="avatar">
+        <a href="{{ absURL "" }}"><img src="{{ .RelPermalink }}" alt="avatar"/></a>
+      </figure>
+    {{- end }}
+    <div id="headertext">
+      <h1 id="sitetitle">{{ site.Title | markdownify }}</h1>
+      {{ partial "menu.html" (dict "menuID" "blognav" "cssid" "topnav" "page" .) }}
+    </div>
+  </header>

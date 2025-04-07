@@ -1,0 +1,14 @@
+<article>
+  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+  <h1 id="articletitle">{{ .Title | markdownify }}</h1>
+  {{ $date := .Date | time.Format "2006-01-02" }}
+  <time datetime="{{ $date }}">{{ $date }}</time>
+
+  {{ if .Params.toc }}
+  <div id="toc">
+    <h2>{{ T "Contents"}}</h2>
+    {{ .TableOfContents }}
+  </div>
+  {{ end }}
+  {{ .Content }}
+</article>

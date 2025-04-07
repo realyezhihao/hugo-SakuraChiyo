@@ -1,0 +1,12 @@
+{{- $page := .page }}
+{{- $taxonomy := .taxonomy }}
+
+{{- with $page.GetTerms $taxonomy }}
+<nav id="tags">
+  <ul>
+    {{- range . }}
+      <li><a href="{{ path.Dir (path.Dir .RelPermalink) }}/#{{ .LinkTitle}}">{{ .LinkTitle }}</a></li>
+    {{- end }}
+  </ul>
+</nav>
+{{- end }}

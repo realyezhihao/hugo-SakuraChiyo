@@ -1,0 +1,19 @@
+{{ partial "header.html" . }}
+{{ $pages := where site.RegularPages "Section" "posts" }}
+{{ $grouped := $pages.GroupByDate "2006" "desc" }}
+
+<main id="list">
+  {{ .Content }}
+  {{ range $grouped }}
+    <h2 class="yearhead">{{ .Key }}</h2>
+    <ul>
+      {{ range .Pages }}
+        <li>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "01-02" }}</time>
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        </li>
+      {{ end }}
+    </ul>
+  {{ end }}
+</main>
+{{ partial "footer.html" . }}

@@ -1,0 +1,32 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "SakuraChiyo"
+license = "MIT"
+licenselink = "https://github.com/realyezhihao/SakuraChiyo/blob/main/LICENSE"
+description = "A fast, mini, clean Hugo theme, applies a colour scheme in the way of Sakura Chiyo."
+homepage = "https://github.com/realyezhihao/SakuraChiyo/"
+tags = [
+  "static",
+  "blog",
+  "simple",
+  "clean",
+  "mini",
+  "dark",
+  "Sakura-Chiyo",
+  "anime"
+]
+features = [
+  "single-column",
+  "blog",
+  "table-of-contents",
+  "minified-assets",
+  "theme-toggle",
+  "menu-location-indicator",
+  "scroll-to-top",
+]
+min_version = "0.143.0"
+
+[author]
+  name = "Zhihao Ye"
+  homepage = "https://github.com/realyezhihao/"

@@ -1,0 +1,24 @@
+{{- with resources.Get "katex/katex.min.css" }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{- end }}
+
+{{- with resources.Get "katex/katex.min.js" }}
+  <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+{{- end }}
+
+{{- with resources.Get "katex/auto-render.min.js" }}
+  <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+{{- end }}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},   // block
+        {left: '\\(', right: '\\)', display: false},  // inline
+        {left: '$', right: '$', display: false},      // inline
+      ],
+      throwOnError : false
+    });
+  });
+</script>
